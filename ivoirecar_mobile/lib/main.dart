@@ -12,12 +12,58 @@ class IvoireCarApp extends StatelessWidget {
   // build() est appelée par Flutter pour (re)dessiner ce widget.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'IvoireCar',
-      theme: ThemeData(colorSchemeSeed: Colors.green, useMaterial3: true),
-      home: const Scaffold(
-        body: Center(child: Text('Bienvenue sur IvoireCar, l\'application de covoiturage !')),
+    return Container(
+      color: Colors.black,
+      alignment: Alignment.center,
+      child: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: [Colors.black, Colors.orange],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          border: Border.all(color: Colors.green, width: 3.0),
+          boxShadow: [BoxShadow(
+            color: Colors.orange,
+            spreadRadius: 10.0,
+            blurRadius: 10.0,
+          )],
+          shape: BoxShape.circle,
+        ),
+        width: 200.0,
+        height: 200.0,
+        alignment: Alignment.center,
+        child: Text.rich(
+        TextSpan(
+          text: "Ivo",
+          style: TextStyle(
+            color: Colors.orange,
+          ),
+          children: [
+            TextSpan(
+              text: "ire",
+              style: TextStyle(
+            color: Colors.white,
+          ),
+            ),
+            TextSpan(
+              text: "Car",
+              style: TextStyle(
+            color: Colors.greenAccent,
+          ),
+            )
+          ]
+        ),
+        textDirection: TextDirection.ltr,
+        style: TextStyle(
+          fontSize: 45,
+          fontWeight: FontWeight.bold,
+          
+        ),
+        
       ),
+      )
     );
+  
   }
 }
